@@ -1,0 +1,26 @@
+// COLORS
+$primary: #3ba3d9;
+$secondary: #ffa46b;
+
+// SPACING
+
+
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+header, .presentation {
+  color: white;
+}
+
+// Header
+header {
+  background-color: $primary;
+  height: 125px;
+}
+
+// Presentation
+.presentation {
+  background-color: $primary;
+}

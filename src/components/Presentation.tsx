@@ -1,18 +1,23 @@
-import React, { Component } from 'react';
+import mobileImage from '../images/mobile.png';
 
-type Props = {};
+export default function Presentation() {
+  return (
+    <section className="presentation">
+      <div className="background">
+        <div className="text-block">
+          <p>With us you will</p>
+          <p className="big-letters">SUCCEED</p>
+          <p>
+            Proactively syndicate open-source e-markets after low-risk
+            high-yield synergy. Professionally simplify visionary technology.
+          </p>
+          <a href="#">
+            <button>Read More</button>
+          </a>
+        </div>
+      </div>
 
-type State = {};
-
-export default class Presentation extends Component<Props, State> {
-  state = {};
-
-  render() {
-    return (
-      <section className="presentation">
-        <p>With us you will</p>
-        <p>SUCCEED</p>
-      </section>
-    );
-  }
+      <img src={mobileImage} alt="mobile" className="mobile" />
+    </section>
+  );
 }

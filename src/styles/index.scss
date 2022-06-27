@@ -11,6 +11,22 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+button {
+  cursor: pointer;
+  color: $primary;
+  margin-top: 30px;
+  background-color: white;
+  border: none;
+  padding: 17px 40px;
+  border-radius: 50px;
+  transition: all 300ms ease-in-out;
+  text-transform: uppercase;
+  &:hover {
+    color: white;
+    background-color: $secondary;
+  }
+}
+
 header, .presentation {
   color: white;
 }
@@ -22,44 +38,71 @@ header, .header-container, .logo-block, .menu ul, .menu a  {
 }
 
 header {
-  position: relative;
+  position: absolute;
   margin-top: 50px;
   justify-content: space-between;
   width: 100%;
   height: 64px;
   background-color: $primary;
-  padding: 0 10%;
+  padding: 0 20%;
   z-index: 10;
-}
-
-.logo-block {
+  .logo-block {
     font-family: 'Comfortaa', cursive;
-    font-size: larger;
+    font-size: 30px;
     .logo {
       margin-right: 10px;
     }
-}
-
-.menu {
-    height: 100%;
-  a {
-    border-bottom: 3px solid transparent;
-    padding: 0 10px;
-  
-    &:hover {
-      border-color:white;
-    }
   }
-  ul, a {
+  .menu {
     height: 100%;
+    a {
+      border-bottom: 3px solid transparent;
+      padding: 0 10px;
+      transition: border-color 300ms ease-in-out;
+    
+      &:hover {
+        border-color:white;
+      }
+    }
+    ul, a {
+      height: 100%;
+    }
   }
 }
 
 // Presentation
 .presentation {
+  position: relative;
   width: 100%;
-  position: absolute;
-  top: 0;
-  background-color: $primary;
-  padding-top: 200px;
+  .background {
+    width: 100%;
+    padding-top: 200px;
+    height: 790px;
+    background-color: $primary;
+    clip-path: polygon(100% 0, 100% 57%, 0% 100%, 0 100%, 0 0);
+    .text-block {
+      width: 400px;
+      margin-left: 20%;
+      margin-top: 7%;
+      line-height: 2;
+      .big-letters {
+        font-size: 80px;
+        font-weight: bold;
+        line-height: 1.1;
+      }
+    }
+  }
+  .mobile {
+    position:absolute;
+    margin-right: 23%;
+    right: 0px;
+    top: 150px;
+    height: 35vw;
+    z-index: 300;
+  }
 }
+
+
+
+
+

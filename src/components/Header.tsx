@@ -1,9 +1,4 @@
-import { Component } from 'react';
 import logo from '../images/webs-go-logo.png';
-
-type Props = {};
-
-type State = {};
 
 interface MenuItem {
   name: string;
@@ -19,46 +14,29 @@ const menu: MenuItem[] = [
   { name: 'Contact', link: '#' }
 ];
 
-export default class Header extends Component<Props, State> {
-  state = {};
+export default function Header() {
+  return (
+    <header>
+      <a className="logo-block" href="#">
+        <img
+          className="logo"
+          src={logo}
+          alt="logo-web-s-go"
+          width={40}
+          height={40}
+        />
+        <p>Web's Go</p>
+      </a>
 
-  render() {
-    return (
-      <header>
-        <a className="logo-block" href="#">
-          <img
-            className="logo"
-            src={logo}
-            alt="logo-web-s-go"
-            width={40}
-            height={40}
-          />
-          <p>Web's Go</p>
-        </a>
-
-        <nav className="menu">
-          <ul>
-            <a href="#">
-              <li>Home</li>
+      <nav className="menu">
+        <ul>
+          {menu.map((item) => (
+            <a href={item.link}>
+              <li>{item.name}</li>
             </a>
-            <a href="#">
-              <li>About</li>
-            </a>
-            <a href="#">
-              <li>Features</li>
-            </a>
-            <a href="#">
-              <li>Screenshots</li>
-            </a>
-            <a href="#">
-              <li>Team</li>
-            </a>
-            <a href="#">
-              <li>Contact</li>
-            </a>
-          </ul>
-        </nav>
-      </header>
-    );
-  }
+          ))}
+        </ul>
+      </nav>
+    </header>
+  );
 }

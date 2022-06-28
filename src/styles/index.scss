@@ -3,32 +3,42 @@
 // COLORS
 $primary: #3ba3d9;
 $secondary: #ffa46b;
+$light: white;
 
 // SPACING
+$space-edge: 20%;
+$space-small: 25px;
+$space: 50px;
+$space-big: 100px;
 
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
 
+section {
+  margin-bottom: 150px;
+}
+
 button {
   cursor: pointer;
   color: $primary;
   margin-top: 30px;
-  background-color: white;
+  background-color: $light;
   border: none;
   padding: 17px 40px;
   border-radius: 50px;
   transition: all 300ms ease-in-out;
   text-transform: uppercase;
   &:hover {
-    color: white;
+    color: $light;
     background-color: $secondary;
   }
 }
 
-header, .presentation {
-  color: white;
+p {
+  font-size: 16px;
+  line-height: 2;
 }
 
 // Header
@@ -38,13 +48,14 @@ header, .header-container, .logo-block, .menu ul, .menu a  {
 }
 
 header {
+  color: $light;
   position: absolute;
   margin-top: 50px;
   justify-content: space-between;
   width: 100%;
   height: 64px;
   background-color: $primary;
-  padding: 0 20%;
+  padding: 0 $space-edge;
   z-index: 10;
   .logo-block {
     font-family: 'Comfortaa', cursive;
@@ -52,16 +63,18 @@ header {
     .logo {
       margin-right: 10px;
     }
+    p {
+      font-size: 25px;
+    }
   }
   .menu {
     height: 100%;
     a {
       border-bottom: 3px solid transparent;
       padding: 0 10px;
-      transition: border-color 300ms ease-in-out;
-    
+      transition: border-color 500ms ease-in-out;
       &:hover {
-        border-color:white;
+        border-color:$light;
       }
     }
     ul, a {
@@ -71,7 +84,8 @@ header {
 }
 
 // Presentation
-.presentation {
+.home {
+  color: $light;
   position: relative;
   width: 100%;
   .background {
@@ -82,9 +96,8 @@ header {
     clip-path: polygon(100% 0, 100% 57%, 0% 100%, 0 100%, 0 0);
     .text-block {
       width: 400px;
-      margin-left: 20%;
+      margin-left: $space-edge;
       margin-top: 7%;
-      line-height: 2;
       .big-letters {
         font-size: 80px;
         font-weight: bold;
@@ -100,6 +113,71 @@ header {
     height: 35vw;
     z-index: 300;
   }
+}
+
+// PRESENTATION
+.presentation {
+  margin: 0 $space-edge;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:$light;
+  text-align: center;
+  .presentation__card {
+    background-color: $primary;
+    width: 350px;
+    padding: $space;
+    border-bottom: 5px solid transparent;
+    transition: border-color 300ms ease-in-out;
+    &:hover {
+      border-color: $secondary;
+      .presentation__card--icon {
+        filter: hue-rotate(-178deg) saturate(1) brightness(1.07)
+      }
+    }
+    .presentation__card--icon {
+      width: 100px;
+      background-color: $light;
+      border-radius: 50%;
+      padding: $space-small;
+      margin-bottom: 30px;
+      transition: filter 300ms ease-in-out;
+    }
+    h2 {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 17.5px;
+    }
+  }
+}
+.about {
+  padding:  $space $space-edge;
+  display: flex;
+/*   background-image: url("../images//gray-bg.jpg"); */
+  .text-column {
+    margin-left: $space-big;
+    margin-top: $space;
+    h2 {
+      margin-bottom: $space-small;
+      font-size: 37px;
+      font-weight: bold;
+    }
+    .about-list {
+      margin-top: $space;
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      grid-template-rows: 1fr 1fr; 
+      gap:  $space  $space; 
+      
+      .about-list__point {
+        .about-list__point--icon{
+          width: 50px;
+        }
+      }
+    }
+  } 
 }
 
 

@@ -1,23 +1,62 @@
-import mobileImage from '../images/mobile.png';
+import icon from '../images/icon.png';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
+interface CardItem {
+  title: string;
+  text: string;
+  icon: string;
+}
+
+const cards: CardItem[] = [
+  {
+    title: 'Creative Design',
+    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
+    icon
+  },
+  {
+    title: 'Creative Design',
+    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
+    icon
+  },
+  {
+    title: 'Creative Design',
+    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
+    icon
+  }
+];
 
 export default function Presentation() {
-  return (
-    <section className="presentation">
-      <div className="background">
-        <div className="text-block">
-          <p>With us you will</p>
-          <p className="big-letters">SUCCEED</p>
-          <p>
-            Proactively syndicate open-source e-markets after low-risk
-            high-yield synergy. Professionally simplify visionary technology.
-          </p>
-          <a href="#">
-            <button>Read More</button>
-          </a>
-        </div>
-      </div>
+  const [cardRef, cardInView] = useInView({
+    triggerOnce: true,
+    trackVisibility: true,
+    delay: 400
+  });
 
-      <img src={mobileImage} alt="mobile" className="mobile" />
+  return (
+    <section>
+      <div className="presentation">
+        {cards.map((item, index) => (
+          <motion.div
+            key={index}
+            ref={cardRef}
+            className="presentation__card"
+            animate={{
+              y: cardInView ? 0 : 100,
+              opacity: cardInView ? 1 : 0
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <img
+              src={item.icon}
+              alt="logo"
+              className="presentation__card--icon"
+            />
+            <h2>{item.title}</h2>
+            <p>{item.text}</p>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }

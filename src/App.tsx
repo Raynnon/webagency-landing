@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Presentation from './components/Presentation';
 import About from './components/About';
+import Features from './components/Features';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Presentation />
       <About />
+      <Features />
     </div>
   );
 }

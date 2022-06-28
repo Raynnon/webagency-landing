@@ -49,8 +49,8 @@ export default function About() {
   });
 
   return (
-    <Parallax bgImage={background} strength={300} style={{ height: '850px' }}>
-      <section className="about">
+    <Parallax bgImage={background} strength={400} style={{ height: '850px' }}>
+      <section id="about" className="about">
         <motion.div
           ref={firstContentRef}
           animate={{
@@ -59,7 +59,7 @@ export default function About() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <img src={mobileImage} alt="mobile" />
+          <img src={mobileImage} className="mobile" alt="mobile" />
         </motion.div>
         <div className="text-column">
           <motion.h2

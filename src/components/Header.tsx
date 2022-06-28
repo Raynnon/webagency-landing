@@ -7,8 +7,8 @@ interface MenuItem {
 
 const menu: MenuItem[] = [
   { name: 'Home', link: '#' },
-  { name: 'About', link: '#' },
-  { name: 'Features', link: '#' },
+  { name: 'About', link: '#about' },
+  { name: 'Features', link: '#features' },
   { name: 'Screenshots', link: '#' },
   { name: 'Team', link: '#' },
   { name: 'Contact', link: '#' }

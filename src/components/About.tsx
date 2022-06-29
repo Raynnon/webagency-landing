@@ -1,9 +1,14 @@
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Parallax } from 'react-parallax';
 import background from '../images/gray-bg.jpg';
 import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
+
+interface Props {
+  onYChange: any;
+}
 
 interface ListItem {
   text: string;
@@ -29,7 +34,19 @@ const listItem: ListItem[] = [
   }
 ];
 
-export default function About() {
+export default function About({ onYChange }: Props) {
+  // Get element position
+  const sectionRef = useRef() as React.MutableRefObject<HTMLImageElement>;
+
+  const getPosition = () => {
+    const y: number = sectionRef.current.offsetTop;
+    onYChange(y);
+  };
+
+  useEffect(() => {
+    getPosition();
+  }, []);
+
   const [firstContentRef, firstContentInView] = useInView({
     triggerOnce: true,
     trackVisibility: true,
@@ -59,7 +76,12 @@ export default function About() {
           }}
           transition={{ duration: 0.5 }}
         >
-          <img src={mobileImage} className="mobile" alt="mobile" />
+          <img
+            src={mobileImage}
+            className="mobile"
+            alt="mobile"
+            ref={sectionRef}
+          />
         </motion.div>
         <div className="text-column">
           <motion.h2
@@ -89,8 +111,8 @@ export default function About() {
             }}
             transition={{ duration: 1.5 }}
           >
-            {listItem.map((item) => (
-              <div className="about-list__point">
+            {listItem.map((item, index) => (
+              <div key={index} className="about-list__point">
                 <img
                   className="about-list__point--icon"
                   src={item.icon}

@@ -14,12 +14,14 @@ $space-big: 100px;
 html {
   scroll-behavior: smooth;
 }
+
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
+  background-color: $primary;
 }
 
-section {
+padding {
   margin-bottom: 150px;
 }
 
@@ -52,14 +54,14 @@ header, .header-container, .logo-block, .menu ul, .menu a  {
 
 header {
   color: $light;
-  position: absolute;
-  margin-top: 50px;
+  /* position: absolute; */
+  /* margin-top: 50px; */
   justify-content: space-between;
   width: 100%;
   height: 64px;
   background-color: $primary;
   padding: 0 $space-edge;
-  z-index: 10;
+  z-index: 300;
   .logo-block {
     font-family: 'Comfortaa', cursive;
     font-size: 30px;
@@ -91,6 +93,9 @@ header {
   color: $light;
   position: relative;
   width: 100%;
+  .white-background {
+    background-color: $light;
+  }
   .background {
     width: 100%;
     padding-top: 200px;
@@ -110,49 +115,53 @@ header {
   }
   .mobile {
     position:absolute;
-    margin-top: 20px;
     margin-right: 23%;
     right: 0px;
-    top: 150px;
+    top: 120px;
     height: 35vw;
-    z-index: 300;
+    z-index: 200;
   }
 }
 
 // PRESENTATION
 .presentation {
-  margin: 0 $space-edge;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color:$light;
-  text-align: center;
-  .presentation__card {
-    background-color: $primary;
-    width: 350px;
-    padding: $space;
-    border-bottom: 5px solid transparent;
-    transition: border-color 300ms ease-in-out;
-    &:hover {
-      border-color: $secondary;
-      .presentation__card--icon {
-        filter: hue-rotate(-178deg) saturate(1) brightness(1.07)
+  background-color: $light;
+  height: 100%;
+  padding: $space-big 0;
+  .cards {
+    margin: 0 $space-edge;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:$light;
+    text-align: center;
+    .presentation__card {
+      background-color: $primary;
+      width: 350px;
+      padding: $space;
+      border-bottom: 5px solid transparent;
+      transition: border-color 300ms ease-in-out;
+      &:hover {
+        border-color: $secondary;
+        .presentation__card--icon {
+          filter: hue-rotate(-178deg) saturate(1) brightness(1.07)
+        }
       }
-    }
-    .presentation__card--icon {
-      width: 100px;
-      background-color: $light;
-      border-radius: 50%;
-      padding: $space-small;
-      margin-bottom: 30px;
-      transition: filter 300ms ease-in-out;
-    }
-    h2 {
-      font-size: 25px;
-      margin-bottom: 30px;
-    }
-    p {
-      font-size: 17.5px;
+      .presentation__card--icon {
+        width: 100px;
+        background-color: $light;
+        border-radius: 50%;
+        padding: $space-small;
+        margin-bottom: 30px;
+        transition: filter 300ms ease-in-out;
+      }
+      h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+      }
+      p {
+        font-size: 17.5px;
+      }
     }
   }
 }
@@ -197,6 +206,7 @@ header {
 }
 
 .features {
+  background-color: $light;
   position: relative;
   padding:  $space-big $space-edge;
   text-align: center;
@@ -204,7 +214,7 @@ header {
     position: absolute;
     width: 30vw;
     height: 30vw;
-    z-index:-1;
+    z-index:0;
     top: 410px;
     left: 0;
     right: 0;
@@ -227,11 +237,15 @@ header {
     font-weight: bold;
     margin: $space-small 15% $space-big 15%;
   }
-  .phone-block {
+  .phone-block { 
     display: flex;
     justify-content: space-between;
     p {
       width: 230px;
+      text-align: justify;
+    }
+    h3 {
+      font-size: 20px;
     }
     .phone-block__left, .phone-block__right {
       display: flex;
@@ -240,16 +254,22 @@ header {
       margin: 75px 0;
     }
     .phone-block__left {
-      text-align: left;
-      .phone-block__left--point:nth-child(odd) {
-        padding-left: 50px;
+      .title-icon-left {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        .icon {
+          margin-left: 10px;
+        }
       }
     }
     .phone-block__right {
-      text-align: right;
-      .phone-block__right--point:nth-child(odd) { 
-        padding-right: 50px;
-        background-color: red;
+      .title-icon-right {
+        display: flex;
+        align-items: center;
+        .icon {
+          margin-right: 10px;
+        }
       }
     }
     .icon {

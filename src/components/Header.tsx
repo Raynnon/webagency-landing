@@ -1,4 +1,10 @@
+import { useEffect, useState } from 'react';
 import logo from '../images/webs-go-logo.png';
+
+interface Props {
+  sticky?: boolean;
+  presentationYposition: number;
+}
 
 interface MenuItem {
   name: string;
@@ -14,9 +20,34 @@ const menu: MenuItem[] = [
   { name: 'Contact', link: '#' }
 ];
 
-export default function Header() {
+export default function Header({ sticky, presentationYposition }: Props) {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  useEffect(() => {
+    if (sticky) {
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
+
   return (
-    <header>
+    <header
+      style={{
+        position: `${sticky ? 'sticky' : 'absolute'}`,
+        top: `${sticky ? 0 : null}`,
+        opacity: `${
+          sticky && scrollPosition >= presentationYposition ? 1 : sticky ? 0 : 1
+        }`
+      }}
+    >
       <a className="logo-block" href="#">
         <img
           className="logo"
@@ -30,8 +61,8 @@ export default function Header() {
 
       <nav className="menu">
         <ul>
-          {menu.map((item) => (
-            <a href={item.link}>
+          {menu.map((item, index) => (
+            <a key={index} href={item.link}>
               <li>{item.name}</li>
             </a>
           ))}

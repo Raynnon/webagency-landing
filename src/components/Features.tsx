@@ -54,8 +54,10 @@ export default function Features() {
         <div className="phone-block__left">
           {listItem.slice(0, 3).map((item) => (
             <div className="phone-block__left--point">
-              <h3>{item.title}</h3>
-              <img src={item.icon} className="icon" alt="icon" />
+              <div className="title-icon-left">
+                <h3>{item.title}</h3>
+                <img src={item.icon} className="icon" alt="icon" />
+              </div>
               <p>{item.text}</p>
             </div>
           ))}
@@ -64,10 +66,12 @@ export default function Features() {
           <img src={mobileImage} alt="mobile" />
         </div>
         <div className="phone-block__right">
-          {listItem.slice(3, 6).map((item) => (
-            <div className="phone-block__right--point">
-              <h3>{item.title}</h3>
-              <img src={item.icon} className="icon" alt="icon" />
+          {listItem.slice(3, 6).map((item, index) => (
+            <div key={index} className="phone-block__right--point">
+              <div className="title-icon-right">
+                <img src={item.icon} className="icon" alt="icon" />
+                <h3>{item.title}</h3>
+              </div>
               <p>{item.text}</p>
             </div>
           ))}

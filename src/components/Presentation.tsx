@@ -34,8 +34,8 @@ export default function Presentation() {
   });
 
   return (
-    <section>
-      <div className="presentation">
+    <section className="presentation">
+      <div className="cards">
         {cards.map((item, index) => (
           <motion.div
             key={index}

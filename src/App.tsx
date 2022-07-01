@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Header sticky presentationYposition={presentationYposition} />
-      <Header presentationYposition={presentationYposition} />
+      <Header />
       <Home />
       <Presentation />
       <About onYChange={(y: number) => setPresentationYposition(y)} />

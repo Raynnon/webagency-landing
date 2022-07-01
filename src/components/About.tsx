@@ -39,7 +39,7 @@ export default function About({ onYChange }: Props) {
   const sectionRef = useRef() as React.MutableRefObject<HTMLImageElement>;
 
   const getPosition = () => {
-    const y: number = sectionRef.current.offsetTop;
+    const y: number = sectionRef.current.getBoundingClientRect().top;
     onYChange(y);
   };
 
@@ -67,7 +67,7 @@ export default function About({ onYChange }: Props) {
 
   return (
     <Parallax bgImage={background} strength={400} style={{ height: '850px' }}>
-      <section id="about" className="about">
+      <section id="about" className="about" ref={sectionRef}>
         <motion.div
           ref={firstContentRef}
           animate={{
@@ -76,12 +76,7 @@ export default function About({ onYChange }: Props) {
           }}
           transition={{ duration: 0.5 }}
         >
-          <img
-            src={mobileImage}
-            className="mobile"
-            alt="mobile"
-            ref={sectionRef}
-          />
+          <img src={mobileImage} className="mobile" alt="mobile" />
         </motion.div>
         <div className="text-column">
           <motion.h2

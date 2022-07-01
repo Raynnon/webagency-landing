@@ -3,7 +3,7 @@ import logo from '../images/webs-go-logo.png';
 
 interface Props {
   sticky?: boolean;
-  presentationYposition: number;
+  presentationYposition?: number;
 }
 
 interface MenuItem {
@@ -44,7 +44,13 @@ export default function Header({ sticky, presentationYposition }: Props) {
         position: `${sticky ? 'sticky' : 'absolute'}`,
         top: `${sticky ? 0 : null}`,
         opacity: `${
-          sticky && scrollPosition >= presentationYposition ? 1 : sticky ? 0 : 1
+          presentationYposition
+            ? sticky && scrollPosition >= presentationYposition
+              ? 1
+              : sticky
+              ? 0
+              : 1
+            : 1
         }`
       }}
     >

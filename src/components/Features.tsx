@@ -52,8 +52,8 @@ export default function Features() {
       </p>
       <div className="phone-block">
         <div className="phone-block__left">
-          {listItem.slice(0, 3).map((item) => (
-            <div className="phone-block__left--point">
+          {listItem.slice(0, 3).map((item, index) => (
+            <div key={index} className="phone-block__left--point">
               <div className="title-icon-left">
                 <h3>{item.title}</h3>
                 <img src={item.icon} className="icon" alt="icon" />

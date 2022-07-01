@@ -42,7 +42,7 @@ const listItem: ListItem[] = [
 
 export default function Features() {
   return (
-    <section id="features" className="features">
+    <section id="features">
       <h2>
         Main <span>Features</span>
       </h2>

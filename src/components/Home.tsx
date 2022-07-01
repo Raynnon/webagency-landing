@@ -2,7 +2,7 @@ import mobileImage from '../images/mobile.png';
 
 export default function Home() {
   return (
-    <section className="home">
+    <section id="home">
       <div className="white-background">
         <div className="background">
           <div className="text-block">

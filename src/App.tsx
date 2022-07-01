@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Presentation from './components/Presentation';
 import About from './components/About';
 import Features from './components/Features';
+import Screenshots from './components/Screenshots';
 
 function App() {
   const [presentationYposition, setPresentationYposition] = useState(0);
@@ -16,6 +17,7 @@ function App() {
       <Presentation />
       <About onYChange={(y: number) => setPresentationYposition(y)} />
       <Features />
+      <Screenshots />
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function Presentation() {
   });
 
   return (
-    <section className="presentation">
+    <section id="presentation">
       <div className="cards">
         {cards.map((item, index) => (
           <motion.div

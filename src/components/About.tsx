@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Parallax } from 'react-parallax';
@@ -67,7 +67,7 @@ export default function About({ onYChange }: Props) {
 
   return (
     <Parallax bgImage={background} strength={400} style={{ height: '850px' }}>
-      <section id="about" className="about" ref={sectionRef}>
+      <section id="about" ref={sectionRef}>
         <motion.div
           ref={firstContentRef}
           animate={{

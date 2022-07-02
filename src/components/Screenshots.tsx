@@ -1,5 +1,5 @@
 import { Parallax } from 'react-parallax';
-import { motion, PanInfo, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 import background from '../images/gray-bg.jpg';
 import mobileImage from '../images/mobile.png';
 
@@ -12,16 +12,6 @@ const screenshots: string[] = [
 ];
 
 export default function Screenshots() {
-  const controls = useAnimation();
-
-  const horizontalScroll = (
-    e: MouseEvent | TouchEvent | PointerEvent,
-    pointInfo: PanInfo
-  ) => {
-    console.log(pointInfo.offset.x);
-    controls.start({ translateX: pointInfo.offset.x });
-  };
-
   return (
     <Parallax bgImage={background} strength={400}>
       <section id="screenshots">
@@ -30,16 +20,12 @@ export default function Screenshots() {
         </h2>
         <motion.div
           className="screenshots-container"
-          animate={controls}
-          dragConstraints={{ left: 300, right: 300 }}
+          drag="x"
+          dragMomentum={false}
+          dragPropagation
+          dragConstraints={{ right: 0, left: -2075 }}
+          dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
         >
-          <motion.div
-            className="scrollable"
-            onPan={(
-              e: MouseEvent | TouchEvent | PointerEvent,
-              pointInfo: PanInfo
-            ) => horizontalScroll(e, pointInfo)}
-          ></motion.div>
           {screenshots.map((image, index) => (
             <img key={index} src={image} className="mobile" alt="mobile" />
           ))}

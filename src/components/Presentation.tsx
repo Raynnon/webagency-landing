@@ -1,3 +1,4 @@
+import Emergence from './animations/Emergence';
 import icon from '../images/icon.png';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
@@ -37,24 +38,17 @@ export default function Presentation() {
     <section id="presentation">
       <div className="cards">
         {cards.map((item, index) => (
-          <motion.div
-            key={index}
-            ref={cardRef}
-            className="presentation__card"
-            animate={{
-              y: cardInView ? 0 : 100,
-              opacity: cardInView ? 1 : 0
-            }}
-            transition={{ duration: 0.5 }}
-          >
-            <img
-              src={item.icon}
-              alt="logo"
-              className="presentation__card--icon"
-            />
-            <h2>{item.title}</h2>
-            <p>{item.text}</p>
-          </motion.div>
+          <Emergence key={index} comingFrom="bottom">
+            <div className="presentation__card">
+              <img
+                src={item.icon}
+                alt="logo"
+                className="presentation__card--icon"
+              />
+              <h2>{item.title}</h2>
+              <p>{item.text}</p>
+            </div>
+          </Emergence>
         ))}
       </div>
     </section>

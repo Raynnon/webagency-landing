@@ -45,6 +45,13 @@ h2 {
   }
 }
 
+.subtitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin: $space-small 15% $space-big 15%;
+  text-align: center;
+}
+
 // Header
 header, .header-container, .logo-block, .menu ul, .menu a  {
   display: flex;
@@ -224,12 +231,6 @@ header {
     animation: rotation 60s infinite linear;
     
   }
-  .subtitle {
-    font-size: 20px;
-    font-weight: bold;
-    margin: $space-small 15% $space-big 15%;
-    text-align: center;
-  }
   .phone-block { 
     display: flex;
     justify-content: space-between;
@@ -278,7 +279,6 @@ header {
     height: 500px;
   }
   .screenshots-container {
-    background-color: red;
     width: 1000vw;
     padding-left: 36.5vw;
     margin-top: $space-big;
@@ -286,6 +286,39 @@ header {
       position: relative;
       z-index: 0;
       margin: 0 130px;
+    }
+  }
+}
+
+#fun-facts {
+  padding:  $space-big $space-edge;
+  text-align: center;
+  .colored-text {
+    color: white
+  }
+  .figures-container {
+    display: flex;
+    justify-content: space-between;
+    .figures {
+      border-radius: 50px;
+      width: 250px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      img {
+        width: 50px;
+      }
+      .figure {
+        font-size: 50px;
+        font-weight: bold;
+      }
+      p {
+        color: $primary;
+        font-size: 25px;
+      }
     }
   }
 }

@@ -1,7 +1,5 @@
 import Emergence from './animations/Emergence';
 import icon from '../images/icon.png';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 interface CardItem {
   title: string;
@@ -28,12 +26,6 @@ const cards: CardItem[] = [
 ];
 
 export default function Presentation() {
-  const [cardRef, cardInView] = useInView({
-    triggerOnce: true,
-    trackVisibility: true,
-    delay: 400
-  });
-
   return (
     <section id="presentation">
       <div className="cards">

@@ -1,6 +1,5 @@
 import { Parallax } from 'react-parallax';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 
 import Emergence from './animations/Emergence';
 
@@ -16,18 +15,6 @@ const screenshots: string[] = [
 ];
 
 export default function Screenshots() {
-  const [mobilesRef, mobilesInView] = useInView({
-    triggerOnce: true,
-    trackVisibility: true,
-    delay: 400
-  });
-
-  const [textRef, textInView] = useInView({
-    triggerOnce: true,
-    trackVisibility: true,
-    delay: 400
-  });
-
   return (
     <Parallax bgImage={background} strength={400}>
       <section id="screenshots">
@@ -39,7 +26,6 @@ export default function Screenshots() {
 
         <Emergence comingFrom="bottom">
           <motion.div
-            ref={mobilesRef}
             className="screenshots-container"
             drag="x"
             dragMomentum={false}

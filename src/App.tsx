@@ -6,6 +6,7 @@ import About from './components/About';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import FunFacts from './components/FunFacts';
+import OurTeam from "./components/OurTeam";
 
 function App() {
   const [presentationYposition, setPresentationYposition] = useState(0);
@@ -20,6 +21,7 @@ function App() {
       <Features />
       <Screenshots />
       <FunFacts />
+      <OurTeam />
     </div>
   );
 }

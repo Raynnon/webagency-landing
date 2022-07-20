@@ -43,9 +43,18 @@ export default function OurTeam() {
       <section id="our-team">
         <Emergence>
           <h2>
-            Awesome <span>Screenshots</span>
+            Our <span>Screenshots</span>
           </h2>
         </Emergence>
+        <div className="cards">
+        {team.map((member, index) => (
+          <div className="card" key={index}>
+            <img src={member.image} alt={member.name} />
+            <h2>{member.name}</h2>
+            <p>{member.description}</p>
+          </div>
+        ))}
+        </div>
       </section>
     </Parallax>
     

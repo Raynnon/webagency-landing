@@ -292,7 +292,7 @@ header {
   padding:  $space-big $space-edge;
   text-align: center;
   .colored-text {
-    color: white
+    color: $light
   }
   .figures-container {
     display: flex;
@@ -305,7 +305,7 @@ header {
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background-color: white;
+      background-color: $light;
       img {
         width: 50px;
       }
@@ -321,6 +321,17 @@ header {
   }
 }
 
+#our-team {
+  padding:  $space-big $space-edge;
+  .cards {
+    display: flex;
+    .card {
+      display: flex;
+      background-color: $light;
+    }
+  }
+  
+}
 
 
 

@@ -1,4 +1,7 @@
 import florianImage from '../images/florian.jpeg';
+import { Parallax } from 'react-parallax';
+import background from '../images/gray-bg.jpg';
+import Emergence from './animations/Emergence';
 
 interface Team {
   name: string;
@@ -36,8 +39,15 @@ const team: Team[] = [
 
 export default function OurTeam() {
   return (
-    <section id="our-team">
-      <p>Test</p>
-    </section>
+    <Parallax bgImage={background} strength={400}>
+      <section id="our-team">
+        <Emergence>
+          <h2>
+            Awesome <span>Screenshots</span>
+          </h2>
+        </Emergence>
+      </section>
+    </Parallax>
+    
   );
 }

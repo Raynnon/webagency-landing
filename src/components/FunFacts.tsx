@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { CountUp } from 'use-count-up';
 import { InView } from 'react-intersection-observer';
 
@@ -36,8 +35,6 @@ const figures: Figures[] = [
 ];
 
 export default function FunFacts() {
-  const [inView, setInView] = useState(false);
-
   return (
     <section id="fun-facts">
       <Emergence>

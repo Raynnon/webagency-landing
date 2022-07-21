@@ -36,7 +36,7 @@ export default function Header({ sticky, presentationYposition }: Props) {
         window.removeEventListener('scroll', handleScroll);
       };
     }
-  }, []);
+  }, [sticky]);
 
   return (
     <header

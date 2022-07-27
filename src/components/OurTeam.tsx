@@ -43,16 +43,21 @@ export default function OurTeam() {
       <section id="our-team">
         <Emergence>
           <h2>
-            Our <span>Screenshots</span>
+            Our <span>Team</span>
           </h2>
         </Emergence>
         <div className="cards">
         {team.map((member, index) => (
-          <div className="card" key={index}>
-            <img src={member.image} alt={member.name} />
-            <h2>{member.name}</h2>
-            <p>{member.description}</p>
-          </div>
+          <><div className="card" key={index}>
+          <img src={member.image} alt={member.name} />
+          <h2>{member.name}</h2>
+          <p className="role">{member.role}</p>
+          <p>{member.description}</p>
+          <div className="social-networks"></div>
+        </div>
+        
+        </>
+          
         ))}
         </div>
       </section>

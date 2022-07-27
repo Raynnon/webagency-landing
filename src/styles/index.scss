@@ -333,14 +333,42 @@ header {
 		display: flex;
 		justify-content: space-between;
 		.card {
+			position: relative;
+			width: 250px;
+			padding: $space-small;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
+			align-items: center;
 			background-color: $light;
+			margin-top: $space;
+			&:hover {
+				h2 {
+					color: $secondary;
+				}		
+			}
+			.social-networks {
+				position: absolute;
+				height: 100px;
+				width: 100%;
+				background-color: red;
+				bottom: 0;
+				opacity: 0.1;
+			}
 			img {
-				width: 150px;
+				width: 125px;
 				border-radius: 50%;
+				margin-bottom: $space-small;
+			}
+			h2 {
+				color: $primary;
+				font-size: 20px;
+				margin-bottom: 5px;
+			}
+			.role {
+				margin-bottom: $space-small;
 			}
 		}
+		
 	}
 }

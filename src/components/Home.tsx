@@ -1,4 +1,5 @@
 import mobileImage from '../images/mobile.png';
+import Button from "./layout/Button";
 
 export default function Home() {
   return (
@@ -13,7 +14,7 @@ export default function Home() {
               high-yield synergy. Professionally simplify visionary technology.
             </p>
             <a href="#">
-              <button>Read More</button>
+              <Button text='Read More' />
             </a>
           </div>
         </div>

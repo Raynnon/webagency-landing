@@ -1,4 +1,5 @@
 import Emergence from "./animations/Emergence";
+import Button from "./layout/Button";
 
 export default function OurTeam() {
   return (
@@ -8,17 +9,18 @@ export default function OurTeam() {
             Get <span>in</span> touch
           </h2>
         </Emergence>
+        
         <form>
             <p>Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor coli incidit labore lorem ipsum amet madolor sit amet.</p>
             <div>
-                <label htmlFor="fname">First name:</label>
-                <input type="text" id="fname" name="fname" />
-                <label htmlFor="fname">First name:</label>
-                <input type="text" id="fname" name="fname" />
-                <label htmlFor="fname">First name:</label>
-                <input type="text" id="fname" name="fname" />
+                <input type="text" id="name" name="name" placeholder="Enter Your Name" />
+                <input type="text" id="email" name="email" placeholder="Enter Your Email" />
+                <input type="text" id="subject" name="subject" placeholder="Enter Your Subject" />
             </div>
+            <textarea name="textarea" rows={4} cols={50} placeholder="Enter Your Message" />
         </form>
+
+        <Button text="Send message" color={true} />
       </section>
   );
 }

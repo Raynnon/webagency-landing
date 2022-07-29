@@ -1,4 +1,5 @@
 @import './utils/variables';
+@import "./layout/layout";
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
 
 html {
@@ -13,22 +14,6 @@ body {
 
 padding {
 	margin-bottom: 150px;
-}
-
-button {
-	cursor: pointer;
-	color: $primary;
-	margin-top: 30px;
-	background-color: $light;
-	border: none;
-	padding: 17px 40px;
-	border-radius: 50px;
-	transition: all 300ms ease-in-out;
-	text-transform: uppercase;
-	&:hover {
-		color: $light;
-		background-color: $secondary;
-	}
 }
 
 p {

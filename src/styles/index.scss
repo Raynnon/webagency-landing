@@ -21,14 +21,14 @@ p {
 	line-height: 2;
 }
 
-h2 {
+/* h2 {
 	text-align: center;
 	font-size: 60px;
 	font-weight: bold;
 	span {
 		color: $primary;
 	}
-}
+} */
 
 .subtitle {
 	font-size: 20px;
@@ -199,64 +199,59 @@ header {
 	}
 }
 
-#features {
-	z-index: 0;
-	background-color: $light;
-	position: relative;
-	padding: $space-big $space-edge;
-	.circle {
-		position: absolute;
-		width: 30vw;
-		height: 30vw;
-		z-index: -1;
-		top: 410px;
-		left: 0;
-		right: 0;
-		margin-left: auto;
-		margin-right: auto;
-		border: 2px dashed $primary;
-		border-radius: 100%;
-		animation: rotation 60s infinite linear;
+//Features
+.circle {
+	position: absolute;
+	width: 30vw;
+	height: 30vw;
+	z-index: -1;
+	top: 410px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	border: 2px dashed $primary;
+	border-radius: 100%;
+	animation: rotation 60s infinite linear;
+}
+.phone-block {
+	display: flex;
+	justify-content: space-between;
+	p {
+		width: 230px;
+		text-align: justify;
 	}
-	.phone-block {
+	h3 {
+		font-size: 20px;
+	}
+	.phone-block__left,
+	.phone-block__right {
 		display: flex;
+		flex-direction: column;
 		justify-content: space-between;
-		p {
-			width: 230px;
-			text-align: justify;
-		}
-		h3 {
-			font-size: 20px;
-		}
-		.phone-block__left,
-		.phone-block__right {
+		margin: 75px 0;
+	}
+	.phone-block__left {
+		.title-icon-left {
 			display: flex;
-			flex-direction: column;
-			justify-content: space-between;
-			margin: 75px 0;
-		}
-		.phone-block__left {
-			.title-icon-left {
-				display: flex;
-				justify-content: flex-end;
-				align-items: center;
-				.icon {
-					margin-left: 10px;
-				}
+			justify-content: flex-end;
+			align-items: center;
+			.icon {
+				margin-left: 10px;
 			}
 		}
-		.phone-block__right {
-			.title-icon-right {
-				display: flex;
-				align-items: center;
-				.icon {
-					margin-right: 10px;
-				}
+	}
+	.phone-block__right {
+		.title-icon-right {
+			display: flex;
+			align-items: center;
+			.icon {
+				margin-right: 10px;
 			}
 		}
-		.icon {
-			width: 50px;
-		}
+	}
+	.icon {
+		width: 50px;
 	}
 }
 

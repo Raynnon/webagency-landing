@@ -1,35 +1,50 @@
-import Emergence from "../animations/Emergence"
 import { Parallax } from 'react-parallax';
-import { JsxElement } from "typescript";
-import background from "../../images/gray-bg.jpg"
+
+import Emergence from '../animations/Emergence';
+
+import backgroundImage from '../../images/gray-bg.jpg';
 
 type Props = {
-    children: JsxElement;
-    title: string[];
-    background?: "light" | "primary" | "parallax";
+  children: JSX.Element;
+  title: string[];
+  background?: 'light' | 'primary' | 'parallax';
+};
+
+export default function Button({ children, title, background }: Props) {
+  const backgroundColor = () => {
+    if (background === 'light') {
+      return 'general-section--light';
+    } else if (background === 'primary') {
+      return 'general-section--primary';
+    }
+
+    return '';
   };
 
-export default function Button({ children, title, background = "light" }: Props) {
-    const content = <section id="our-team">
-                        <> 
-                        <Emergence>
-                        <h2>
-                            {title[0]} <span>{title[1]}</span>
-                        </h2>
-                        </Emergence>
-                        {children}
-                        </>
-                    </section>
+  const content = (): JSX.Element => {
+    return (
+      <section className={`general-section ${backgroundColor()}`}>
+        <>
+          <Emergence>
+            <h2>
+              {title[0]} <span>{title[1]}</span>
+            </h2>
+          </Emergence>
+          {children}
+        </>
+      </section>
+    );
+  };
+
   return (
-/*     {
-        background === "parallax" ? 
-            <div>
-                {content}
-            </div>
-            :  */{content}
-  /*   } */
-    
-      
-    
+    <>
+      {background === 'parallax' ? (
+        <Parallax bgImage={backgroundImage} strength={400}>
+          {content()}
+        </Parallax>
+      ) : (
+        <>{content()}</>
+      )}
+    </>
   );
 }

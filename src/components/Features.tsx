@@ -44,7 +44,7 @@ const listItem: ListItem[] = [
 
 export default function Features() {
   return (
-    <Section title={['Main', 'Features']} background="primary">
+    <Section title={['Main', 'Features']} background="light">
       <>
         <p className="subtitle">
           Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do

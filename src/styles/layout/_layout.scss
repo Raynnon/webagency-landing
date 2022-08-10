@@ -24,27 +24,22 @@
 }
 
 // Section
-.general-section {
+@mixin button($background: $light, $spanColor: $primary) {
 	z-index: 0;
 	position: relative;
 	padding: $space-big $space-edge;
 	h2 {
-		text-align: center;
-		font-size: 60px;
-		font-weight: bold;
 		span {
-			color: $primary;
+			color: $spanColor;
 		}
 	}
-	.general-section--light {
-		background-color: $light;
-	}
-	.general-section--primary {
-		background-color: $primary;
-		h2 {
-			span {
-				color: $light;
-			}
-		}	
-	}
+}
+
+
+.general-section--light {
+	@include button;
+}
+
+.general-section--primary {
+	@include button($background: $primary, $spanColor: $light);
 }

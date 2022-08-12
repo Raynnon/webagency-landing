@@ -47,6 +47,4 @@
 
 .general-section--parallax {
 	@include button($background: inherit, $spanColor: $primary);
-	padding: $space-big 0;
-	white-space: nowrap;
 }

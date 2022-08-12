@@ -31,15 +31,11 @@ h2 {
 .subtitle {
 	font-size: 20px;
 	font-weight: bold;
-<<<<<<< HEAD
 	margin: 0 15% $space-big 15%;
-=======
-	margin: $space-small 15% $space 15%;
->>>>>>> bec96c156bde0353ff0b9b26fef0f74d89f1a72b
 	text-align: center;
 }
 
-// Header
+// HEADER
 header,
 .header-container,
 .logo-block,
@@ -162,6 +158,7 @@ header {
 	}
 }
 
+// ABOUT
 #about {
 	padding: $space $space-edge;
 	display: flex;
@@ -307,55 +304,53 @@ header {
 
 
 // OUR TEAM
-#our-team {
-	padding: $space-big $space-edge;
-	.cards {
+.cards {
+	display: flex;
+	justify-content: space-between;
+	.card {
+		position: relative;
+		&:hover {
+		.card-infos h2 {
+			color: $secondary;
+		}
+		.social-networks {
+			transform: translateY(75px);
+		}
+		}
+		.card-infos {
+		z-index: 100;
+		position: relative;
+		width: 250px;
+		padding: $space-small;
 		display: flex;
-		justify-content: space-between;
-    .card {
-      position: relative;
-      &:hover {
-        .card-infos h2 {
-          color: $secondary;
-        }
-        .social-networks {
-          transform: translateY(75px);
-        }
-      }
-      .card-infos {
-        z-index: 100;
-        position: relative;
-        width: 250px;
-        padding: $space-small;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: $light;
-        margin-top: $space;
-        img {
-          width: 125px;
-          border-radius: 50%;
-          margin-bottom: $space-small;
-        }
-        h2 {
-          color: $primary;
-          font-size: 20px;
-          margin-bottom: 5px;
-        }
-        .role {
-          margin-bottom: $space-small;
-        }
-      }
-      .social-networks {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        height: 75px;
-        width: 100%;
-        bottom: 0;
-        transition: all .5s ease-in-out;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: $light;
+		margin-top: $space;
+		img {
+			width: 125px;
+			border-radius: 50%;
+			margin-bottom: $space-small;
+		}
+		h2 {
+			color: $primary;
+			font-size: 20px;
+			margin-bottom: 5px;
+		}
+		.role {
+			margin-bottom: $space-small;
+		}
+		}
+		.social-networks {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		height: 75px;
+		width: 100%;
+		bottom: 0;
+		transition: all .5s ease-in-out;
 		background-color: $light;
 		a {
 			margin: 0 5px;
@@ -364,12 +359,9 @@ header {
 				width: 25px;
 			}
 		}     
-      }
-    }
+		}
 	}
 }
 
-#contact {
-	padding: $space-big $space-edge;
-	background-color: $light
-}
+
+// CONTACT

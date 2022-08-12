@@ -16,6 +16,8 @@ export default function Button({ children, title, background }: Props) {
       return 'general-section--light';
     } else if (background === 'primary') {
       return 'general-section--primary';
+    } else if (background === 'parallax') {
+      return 'general-section--parallax';
     }
 
     return '';

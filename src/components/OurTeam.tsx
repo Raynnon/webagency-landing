@@ -1,7 +1,10 @@
 import florianImage from '../images/florian.jpeg';
 import { Parallax } from 'react-parallax';
 import background from '../images/gray-bg.jpg';
+
 import Emergence from './animations/Emergence';
+import Section from '../components/layout/Section';
+
 import facebookIcon from '../images/social-networks/facebook-icon.svg';
 import instagramIcon from '../images/social-networks/instagram-icon.svg';
 import linkedinIcon from '../images/social-networks/linkedin-icon.svg';

@@ -1,10 +1,8 @@
-import { Parallax } from 'react-parallax';
 import { motion } from 'framer-motion';
 
 import Section from './layout/Section';
 import Emergence from './animations/Emergence';
 
-import background from '../images/gray-bg.jpg';
 import mobileImage from '../images/mobile.png';
 
 const screenshots: string[] = [

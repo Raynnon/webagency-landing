@@ -1,18 +1,16 @@
 import Section from '../components/layout/Section';
-import Emergence from './animations/Emergence';
 import Button from './layout/Button';
 
 export default function OurTeam() {
   return (
     <Section title={['Get', 'in touch']} background="light">
       <>
+        <p>
+          Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor coli incidit labore lorem ipsum amet madolor sit amet.
+        </p>
         <form>
-          <p>
-            Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor coli incidit labore lorem ipsum amet madolor sit
-            amet.
-          </p>
-          <div>
+          <div className="details">
             <input
               type="text"
               id="name"

@@ -12,10 +12,6 @@ body {
 	background-color: $primary;
 }
 
-padding {
-	margin-bottom: 150px;
-}
-
 p {
 	font-size: 16px;
 	line-height: 2;
@@ -26,6 +22,38 @@ h2 {
 	font-size: 60px;
 	font-weight: bold;
 	margin-bottom: $space-small;
+}
+
+input, textarea {
+	border: none;
+	border-bottom: solid 2px $primary;
+	outline: 0;
+	font-size: 16px;
+	padding: 10px 2%;
+	margin: $space 2%;
+}
+
+input {
+	width: 25%;
+}
+
+textarea {
+	font-family: 'Lato', sans-serif;
+	width: 100%;
+}
+
+@keyframes changeColor {
+	0% {border-bottom: solid 2px $primary}
+	49% {border-color: $primary;}
+	50% { border-bottom: solid 3px $secondary; padding-bottom: 9px;}
+	75% {width: 27%; padding: 10px 3%; margin: $space 1.5%;}
+	100% { }
+}
+
+input:focus-visible, textarea:focus-visible {
+	border-bottom: solid 2px $secondary;
+	animation-name: changeColor;
+	animation-duration: 0.5s;
 }
 
 .subtitle {
@@ -365,3 +393,7 @@ header {
 
 
 // CONTACT
+.details {
+	display: flex;
+	justify-content: space-between;
+}

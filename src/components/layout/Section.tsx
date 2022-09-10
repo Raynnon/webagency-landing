@@ -6,8 +6,8 @@ import backgroundImage from '../../images/gray-bg.jpg';
 
 type Props = {
   children: JSX.Element;
-  title: string[];
-  background?: 'light' | 'primary' | 'parallax';
+  title?: string[];
+  background?: 'light' | 'primary' | 'parallax' | 'dark';
 };
 
 export default function Button({ children, title, background }: Props) {
@@ -16,6 +16,8 @@ export default function Button({ children, title, background }: Props) {
       return 'general-section--light';
     } else if (background === 'primary') {
       return 'general-section--primary';
+    } else if (background === 'dark') {
+      return 'general-section--dark';
     } else if (background === 'parallax') {
       return 'general-section--parallax';
     }
@@ -27,11 +29,14 @@ export default function Button({ children, title, background }: Props) {
     return (
       <section className={`general-section ${backgroundColor()}`}>
         <>
-          <Emergence>
-            <h2>
-              {title[0]} <span>{title[1]}</span>
-            </h2>
-          </Emergence>
+          {title ? (
+            <Emergence>
+              <h2>
+                {title[0]} <span>{title[1]}</span>
+              </h2>
+            </Emergence>
+          ) : null}
+
           {children}
         </>
       </section>

@@ -6,8 +6,10 @@ import About from './components/About';
 import Features from './components/Features';
 import Screenshots from './components/Screenshots';
 import FunFacts from './components/FunFacts';
-import OurTeam from "./components/OurTeam";
-import Contact from "./components/Contact";
+import OurTeam from './components/OurTeam';
+import Contact from './components/Contact';
+import Map from './components/Map';
+import Footer from './components/Footer';
 
 function App() {
   const [presentationYposition, setPresentationYposition] = useState(0);
@@ -24,6 +26,8 @@ function App() {
       <FunFacts />
       <OurTeam />
       <Contact />
+      <Map />
+      <Footer />
     </div>
   );
 }

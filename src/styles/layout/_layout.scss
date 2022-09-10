@@ -45,6 +45,10 @@
 	@include button($background: $primary, $spanColor: $light);
 }
 
+.general-section--dark {
+	@include button($background: $dark, $spanColor: $light);
+}
+
 .general-section--parallax {
 	@include button($background: inherit, $spanColor: $primary);
 }

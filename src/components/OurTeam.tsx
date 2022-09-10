@@ -50,7 +50,7 @@ export default function OurTeam() {
     <Section title={['Our', 'Team']} background="parallax">
       <div className="cards">
         {team.map((member, index) => (
-          <div className="card">
+          <div className="card" key={index}>
             <div className="card-infos" key={index}>
               <img src={member.image} alt={member.name} />
               <h2>{member.name}</h2>

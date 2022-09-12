@@ -37,7 +37,7 @@ const figures: Figures[] = [
 
 export default function FunFacts() {
   return (
-    <Section title={['Fun', 'Facts']} background="primary">
+    <Section id="fun-facts" title={['Fun', 'Facts']} background="primary">
       <>
         <Emergence delay={800}>
           <p className="subtitle">

@@ -15,7 +15,11 @@ const screenshots: string[] = [
 
 export default function Screenshots() {
   return (
-    <Section title={['Awesome', 'Screenshots']} background="parallax">
+    <Section
+      id="screenshots"
+      title={['Awesome', 'Screenshots']}
+      background="parallax"
+    >
       <Emergence comingFrom="bottom">
         <motion.div
           className="screenshots-container"

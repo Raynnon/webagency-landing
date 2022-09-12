@@ -1,4 +1,4 @@
-@import './breakpoints';
+@import "./breakpoints";
 
 // Button
 @mixin button($background: $light, $fontColor: $primary) {
@@ -18,7 +18,7 @@
 }
 
 .classic-button {
-	@include button;  
+	@include button;
 }
 
 .coloured-button {
@@ -26,31 +26,36 @@
 }
 
 // Section
-@mixin button($background: $light, $spanColor: $primary) {
+@mixin section($background: $light, $spanColor: $primary) {
 	z-index: 0;
 	position: relative;
-	padding: $space-big $space-edge;
 	background-color: $background;
+	padding: $space-big 5px;
 	h2 {
 		span {
 			color: $spanColor;
 		}
 	}
+	@include lg {
+		padding: $space-big 30px;
+	}
+	@include xl {
+		padding: $space-big $space-edge;
+	}
 }
 
-
 .general-section--light {
-	@include button;
+	@include section;
 }
 
 .general-section--primary {
-	@include button($background: $primary, $spanColor: $light);
+	@include section($background: $primary, $spanColor: $light);
 }
 
 .general-section--dark {
-	@include button($background: $dark, $spanColor: $light);
+	@include section($background: $dark, $spanColor: $light);
 }
 
 .general-section--parallax {
-	@include button($background: inherit, $spanColor: $primary);
+	@include section($background: inherit, $spanColor: $primary);
 }

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import logo from '../images/webs-go-logo.png';
 
 interface Props {
-  sticky?: boolean;
-  presentationYposition?: number;
+  sticky: boolean;
+  presentationYposition: number;
 }
 
 interface MenuItem {
@@ -15,12 +15,15 @@ const menu: MenuItem[] = [
   { name: 'Home', link: '#' },
   { name: 'About', link: '#about' },
   { name: 'Features', link: '#features' },
-  { name: 'Screenshots', link: '#' },
-  { name: 'Team', link: '#' },
-  { name: 'Contact', link: '#' }
+  { name: 'Screenshots', link: '#screenshots' },
+  { name: 'Team', link: '#team' },
+  { name: 'Contact', link: '#contact' }
 ];
 
-export default function Header({ sticky, presentationYposition }: Props) {
+export default function Header({
+  sticky,
+  presentationYposition
+}: Partial<Props>) {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -54,7 +57,7 @@ export default function Header({ sticky, presentationYposition }: Props) {
         }`
       }}
     >
-      <a className="logo-block" href="#">
+      <a className="logo-block" href="#home">
         <img
           className="logo"
           src={logo}

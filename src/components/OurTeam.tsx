@@ -47,7 +47,7 @@ const team: Team[] = [
 
 export default function OurTeam() {
   return (
-    <Section title={['Our', 'Team']} background="parallax">
+    <Section id="team" title={['Our', 'Team']} background="parallax">
       <div className="cards">
         {team.map((member, index) => (
           <div className="card" key={index}>

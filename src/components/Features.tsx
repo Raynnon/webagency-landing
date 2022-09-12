@@ -1,7 +1,6 @@
 import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
 import Section from './layout/Section';
-import { Background } from 'react-parallax';
 
 interface ListItem {
   title: string;
@@ -44,8 +43,8 @@ const listItem: ListItem[] = [
 
 export default function Features() {
   return (
-    <Section title={['Main', 'Features']} background="light">
-      <>
+    <Section id="features" title={['Main', 'Features']} background="light">
+      <div>
         <p className="subtitle">
           Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
           eiusmod tempor coli incidit labore lorem ipsum amet madolor sit amet.
@@ -78,7 +77,7 @@ export default function Features() {
           </div>
         </div>
         <div className="circle"></div>
-      </>
+      </div>
     </Section>
   );
 }

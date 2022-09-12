@@ -6,11 +6,12 @@ import backgroundImage from '../../images/gray-bg.jpg';
 
 type Props = {
   children: JSX.Element;
+  id?: string;
   title?: string[];
   background?: 'light' | 'primary' | 'parallax' | 'dark';
 };
 
-export default function Button({ children, title, background }: Props) {
+export default function Button({ children, id, title, background }: Props) {
   const backgroundColor = () => {
     if (background === 'light') {
       return 'general-section--light';
@@ -27,7 +28,10 @@ export default function Button({ children, title, background }: Props) {
 
   const content = (): JSX.Element => {
     return (
-      <section className={`general-section ${backgroundColor()}`}>
+      <section
+        id={id ? id : ''}
+        className={`general-section ${backgroundColor()}`}
+      >
         <>
           {title ? (
             <Emergence>

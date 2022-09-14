@@ -1,10 +1,8 @@
 import { useEffect, useRef } from 'react';
 import Section from './layout/Section';
-import { Parallax } from 'react-parallax';
 
 import Emergence from './animations/Emergence';
 
-import background from '../images/gray-bg.jpg';
 import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
 

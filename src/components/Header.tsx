@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import logo from '../images/webs-go-logo.png';
+import menuIcon from '../images/menu-icon.svg';
 
 interface Props {
   sticky: boolean;
@@ -24,6 +25,7 @@ export default function Header({
   sticky,
   presentationYposition
 }: Partial<Props>) {
+  const [menuActive, setMenuActive] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
@@ -69,7 +71,16 @@ export default function Header({
       </a>
 
       <nav className="menu">
-        <ul>
+        <img
+          className="menu-icon"
+          src={menuIcon}
+          alt="menu-icon"
+          width="48"
+          height="48"
+          onClick={() => setMenuActive(!menuActive)}
+        />
+
+        <ul className={menuActive ? 'active' : ''}>
           {menu.map((item, index) => (
             <a key={index} href={item.link}>
               <li>{item.name}</li>

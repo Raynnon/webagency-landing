@@ -88,7 +88,6 @@ textarea {
 	}
 }
 
-// HEADER
 header,
 .header-container,
 .logo-block,
@@ -99,6 +98,8 @@ header,
 }
 
 header {
+	position: sticky;
+	top: 0;
 	color: $light;
 	justify-content: space-between;
 	align-items: center;
@@ -114,11 +115,16 @@ header {
 		padding: 0 $space-edge;
 	}
 	.menu {
-		height: 100%;
+		display: flex;
+		align-items: "center";
+		@include md {
+			
+		}
 		.menu-icon {
 			border: 1px solid white;
 			padding: 0 5px;
 			border-radius: 10%;
+			cursor: pointer;
 			@include md {
 				display: none;
 			}
@@ -146,6 +152,7 @@ header {
 		}
 		.active {
 			padding: 10px 5px 0 5px;
+			top: 64px;
 			left: 0;
 			height: 250px;
 			width: 100%;
@@ -167,20 +174,21 @@ header {
 		align-items: center;
 		width: 100%;
 		background-color: $primary;
+		padding-top: $space;
 		@include md {
 			justify-content: space-between;
 			flex-direction: row;
-			padding: 150px 30px 0 30px;
+			padding: $space 30px 0 30px;
 		}
 		@include lg {
-			padding: 200px 30px 0 30px;
+			padding: $space 30px 0 30px;
 		}
 		@include xl {
-			padding: 200px $space-edge 0 $space-edge;
+			padding: $space $space-edge 0 $space-edge;
 		}
 		.text-block {
 			width: 400px;
-			margin: 125px 0 $space-big 0;
+			margin: 0 0 $space-big 0;
 			@include md {
 				margin-top: 7%;
 			}
@@ -217,9 +225,6 @@ header {
 }
 
 #presentation {
-	background-color: $light;
-	height: 100%;
-	padding: $space-big 0;
 	.cards {
 		margin: 0 5px;
 		display: flex;
@@ -230,50 +235,46 @@ header {
 		@include md {
 			flex-direction: row;
 			justify-content: center;
-			margin: 0 30px;
 		}
-		@include xl {
-			margin: 0 $space-edge;
-		}
-	}
-	div {
-		&:not(:last-child) {
-			margin-bottom: $space-small;
-		}
-		@include md {
+		div {
 			&:not(:last-child) {
-				margin-bottom: 0;
-				margin-right: 40px;
-			}
-		}
-		.presentation__card {
-			background-color: $primary;
-			padding: $space;
-			border-bottom: 5px solid transparent;
-			transition: border-color 300ms ease-in-out;
-			&:hover {
-				border-color: $secondary;
-				.presentation__card--icon {
-					filter: hue-rotate(-178deg) saturate(1) brightness(1.07);
-				}
-			}
-			.presentation__card--icon {
-				width: 100px;
-				background-color: $light;
-				border-radius: 50%;
-				padding: $space-small;
-				margin-bottom: 30px;
-				transition: filter 300ms ease-in-out;
-			}
-			h2 {
-				font-size: 25px;
-				margin-bottom: 30px;
+				margin-bottom: $space-small;
 			}
 			@include md {
-				padding: $space-small;
+				&:not(:last-child) {
+					margin-bottom: 0;
+					margin-right: 40px;
+				}
 			}
-			@include lg {
+			.presentation__card {
+				background-color: $primary;
 				padding: $space;
+				border-bottom: 5px solid transparent;
+				transition: border-color 300ms ease-in-out;
+				&:hover {
+					border-color: $secondary;
+					.presentation__card--icon {
+						filter: hue-rotate(-178deg) saturate(1) brightness(1.07);
+					}
+				}
+				.presentation__card--icon {
+					width: 100px;
+					background-color: $light;
+					border-radius: 50%;
+					padding: $space-small;
+					margin-bottom: 30px;
+					transition: filter 300ms ease-in-out;
+				}
+				h2 {
+					font-size: 25px;
+					margin-bottom: 30px;
+				}
+				@include md {
+					padding: $space-small;
+				}
+				@include lg {
+					padding: $space;
+				}
 			}
 		}
 	}

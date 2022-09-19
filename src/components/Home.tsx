@@ -9,8 +9,8 @@ export default function Home() {
           <p>With us you will</p>
           <p className="big-letters">SUCCEED</p>
           <p>
-            Proactively syndicate open-source e-markets after low-risk
-            high-yield synergy. Professionally simplify visionary technology.
+          We will create your website as if it was our own.
+We will deliver a professional website with unique features designed specifically for your project.
           </p>
           <Button text="Read More" link="#" />
         </div>

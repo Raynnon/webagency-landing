@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Header from './components/Header';
 import Home from './components/Home';
 import Presentation from './components/Presentation';
@@ -12,15 +11,12 @@ import Map from './components/Map';
 import Footer from './components/Footer';
 
 function App() {
-  const [presentationYposition, setPresentationYposition] = useState(0);
-
   return (
     <div className="App">
-      <Header sticky presentationYposition={presentationYposition} />
       <Header />
       <Home />
       <Presentation />
-      <About onYChange={(y: number) => setPresentationYposition(y)} />
+      <About />
       <Features />
       <Screenshots />
       <FunFacts />

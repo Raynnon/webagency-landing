@@ -1,14 +1,10 @@
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Section from './layout/Section';
 
 import Emergence from './animations/Emergence';
 
 import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
-
-interface Props {
-  onYChange: any;
-}
 
 interface ListItem {
   text: string;
@@ -17,34 +13,25 @@ interface ListItem {
 
 const listItem: ListItem[] = [
   {
-    text: 'Intrinsically aggregate cutting-edge internal or "organic" sources through pandemic.',
+    text: 'Solve complex website problems with effective solutions',
     icon
   },
   {
-    text: 'Intrinsically aggregate cutting-edge internal or "organic" sources through pandemic.',
+    text: 'Creating SEO optimised websites',
     icon
   },
   {
-    text: 'Intrinsically aggregate cutting-edge internal or "organic" sources through pandemic.',
+    text: 'Create secure, fast and user-friendly websites',
     icon
   },
   {
-    text: 'Intrinsically aggregate cutting-edge internal or "organic" sources through pandemic.',
+    text: 'Learn new skills quickly when you need them',
     icon
   }
 ];
 
-export default function About({ onYChange }: Props) {
+export default function About() {
   const sectionRef = useRef() as React.MutableRefObject<HTMLImageElement>;
-
-  useEffect(() => {
-    const getPosition = () => {
-      const y: number = sectionRef.current.getBoundingClientRect().top;
-      onYChange(y);
-    };
-
-    getPosition();
-  }, [onYChange]);
 
   return (
     <Section id="about" background="parallax">
@@ -55,13 +42,12 @@ export default function About({ onYChange }: Props) {
 
         <div className="text-column">
           <Emergence delay={1000}>
-            <h2>Make Business Easy With Us</h2>
+            <h2>The know-how of our agency</h2>
           </Emergence>
 
           <Emergence>
             <p>
-              Lorem ipsum madolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor coli incidit labore lorem
+            Optimised design and comprehensive service
             </p>
           </Emergence>
 

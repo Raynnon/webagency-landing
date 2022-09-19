@@ -21,44 +21,11 @@ const menu: MenuItem[] = [
   { name: 'Contact', link: '#contact' }
 ];
 
-export default function Header({
-  sticky,
-  presentationYposition
-}: Partial<Props>) {
+export default function Header() {
   const [menuActive, setMenuActive] = useState(false);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.pageYOffset;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    if (sticky) {
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, [sticky]);
 
   return (
-    <header
-      style={{
-        position: `${sticky ? 'sticky' : 'absolute'}`,
-        top: `${sticky ? 0 : null}`,
-        opacity: `${
-          presentationYposition
-            ? sticky && scrollPosition >= presentationYposition
-              ? 1
-              : sticky
-              ? 0
-              : 1
-            : 1
-        }`
-      }}
-    >
+    <header>
       <a className="logo-block" href="#home">
         <img
           className="logo"

@@ -1,5 +1,9 @@
 import Emergence from './animations/Emergence';
-import icon from '../images/icon.png';
+import Section from "./layout/Section"
+
+import iconPuzzle from '../images/puzzle.svg';
+import iconBulb from '../images/bulb.svg';
+import iconTriangle from '../images/triangle.svg';
 
 interface CardItem {
   title: string;
@@ -9,25 +13,25 @@ interface CardItem {
 
 const cards: CardItem[] = [
   {
-    title: 'Creative Design',
-    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
-    icon
+    title: 'Reliability',
+    text: 'We will never run out of answers or technical solutions for your project needs.',
+    icon: iconPuzzle
   },
   {
-    title: 'Creative Design',
-    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
-    icon
+    title: 'Ideas',
+    text: 'From our experience we can suggest improvements and relevant ideas.',
+    icon: iconBulb
   },
   {
-    title: 'Creative Design',
-    text: 'Proactively syndicate open-source e-markets after low-risk high-yield synergy.',
-    icon
+    title: 'Details',
+    text: 'Our websites come with optimisations for SEO, security and display speed.',
+    icon: iconTriangle
   }
 ];
 
 export default function Presentation() {
   return (
-    <section id="presentation">
+    <Section id="presentation" background='light'>
       <div className="cards">
         {cards.map((item, index) => (
           <Emergence key={index} comingFrom="bottom">
@@ -43,6 +47,6 @@ export default function Presentation() {
           </Emergence>
         ))}
       </div>
-    </section>
+    </Section>
   );
 }

@@ -118,7 +118,6 @@ header {
 		display: flex;
 		align-items: "center";
 		@include md {
-			
 		}
 		.menu-icon {
 			border: 1px solid white;
@@ -226,7 +225,6 @@ header {
 
 #presentation {
 	.cards {
-		margin: 0 5px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -237,6 +235,7 @@ header {
 			justify-content: center;
 		}
 		div {
+			width: 100%;
 			&:not(:last-child) {
 				margin-bottom: $space-small;
 			}
@@ -251,6 +250,15 @@ header {
 				padding: $space;
 				border-bottom: 5px solid transparent;
 				transition: border-color 300ms ease-in-out;
+				@include md {
+					min-height: 371px;
+				}
+				@include lg {
+					min-height: 421px;
+				}
+				@include xl {
+					min-height: 389;
+				}
 				&:hover {
 					border-color: $secondary;
 					.presentation__card--icon {
@@ -284,13 +292,35 @@ header {
 #about {
 	display: flex;
 	.container {
+		width: 100%;
 		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		@include lg {
+			flex-direction: row;
+		}
 		.mobile {
-			margin-top: $space;
+			width: 200px;
+			margin-top: $space-small;
+			@include lg {
+				margin-top: $space;
+				width: auto;
+			}
 		}
 		.text-column {
-			margin-left: $space-big;
-			margin-top: $space;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			width: 100%;
+			@include lg {
+				margin: $space 10px 0 10px;
+			}
+			@include xl {
+				margin: $space $space-small 0 $space-small;
+			}
+			p {
+				text-align: justify;
+			}
 			h2 {
 				margin-bottom: $space-small;
 				font-size: 37px;
@@ -306,6 +336,8 @@ header {
 				.about-list__point {
 					.about-list__point--icon {
 						width: 50px;
+						display: block;
+						margin: auto;
 					}
 				}
 			}

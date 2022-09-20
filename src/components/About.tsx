@@ -13,19 +13,19 @@ interface ListItem {
 
 const listItem: ListItem[] = [
   {
-    text: 'Solve complex website problems with effective solutions',
+    text: 'Solve complex website problems with effective solutions. You have a problem? We have the solution!',
     icon
   },
   {
-    text: 'Creating SEO optimised websites',
+    text: 'Create websites optimized for search engine optimization. Stay on top of the search engines!',
     icon
   },
   {
-    text: 'Create secure, fast and user-friendly websites',
+    text: 'Create secure, fast and user-friendly websites. Make the difference with the competition.',
     icon
   },
   {
-    text: 'Learn new skills quickly when you need them',
+    text: 'Acquire new skills quickly when you need them. We train you to use your new tool.',
     icon
   }
 ];
@@ -47,7 +47,11 @@ export default function About() {
 
           <Emergence>
             <p>
-            Optimised design and comprehensive service
+              Our web agency is involved in all our clients' websites as if they
+              were our own projects. We aim to deliver high quality, efficient
+              and sustainable websites. Together we will create your website by
+              combining your ideas and needs with our experience and technical
+              solutions.
             </p>
           </Emergence>
 

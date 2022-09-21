@@ -1,6 +1,7 @@
 import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
 import Section from './layout/Section';
+import circleDashed from '../images/circle-dashed.svg';
 
 interface ListItem {
   title: string;
@@ -61,8 +62,9 @@ export default function Features() {
               </div>
             ))}
           </div>
-          <div>
-            <img src={mobileImage} alt="mobile" />
+          <div className="mobile-container">
+            <img className="circle" src={circleDashed} alt="circle" />
+            <img className="mobile" src={mobileImage} alt="mobile" />
           </div>
           <div className="phone-block__right">
             {listItem.slice(3, 6).map((item, index) => (
@@ -76,7 +78,7 @@ export default function Features() {
             ))}
           </div>
         </div>
-        <div className="circle"></div>
+        {/* <div className="circle"></div> */}
       </div>
     </Section>
   );

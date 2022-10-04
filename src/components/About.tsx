@@ -4,7 +4,11 @@ import Section from './layout/Section';
 import Emergence from './animations/Emergence';
 
 import mobileImage from '../images/mobile.png';
-import icon from '../images/icon.png';
+
+import brain from '../images/brain.svg';
+import seoIcon from '../images/seo-icon.svg';
+import secureIcon from '../images/secure-icon.svg';
+import skills from '../images/skills-icon.svg';
 
 interface ListItem {
   text: string;
@@ -14,19 +18,19 @@ interface ListItem {
 const listItem: ListItem[] = [
   {
     text: 'Solve complex website problems with effective solutions. You have a problem? We have the solution!',
-    icon
+    icon: brain
   },
   {
     text: 'Create websites optimized for search engine optimization. Stay on top of the search engines!',
-    icon
+    icon: seoIcon
   },
   {
     text: 'Create secure, fast and user-friendly websites. Make the difference with the competition.',
-    icon
+    icon: secureIcon
   },
   {
     text: 'Acquire new skills quickly when you need them. We train you to use your new tool.',
-    icon
+    icon: skills
   }
 ];
 

@@ -2,6 +2,10 @@ import mobileImage from '../images/mobile.png';
 import icon from '../images/icon.png';
 import Section from './layout/Section';
 import circleDashed from '../images/circle-dashed.svg';
+import brain from '../images/brain.svg';
+import seoIcon from '../images/seo-icon.svg';
+import secureIcon from '../images/secure-icon.svg';
+import skills from '../images/skills-icon.svg';
 
 interface ListItem {
   title: string;
@@ -13,22 +17,22 @@ const listItem: ListItem[] = [
   {
     title: 'Lorem ipsum',
     text: 'Our system is a comprehensive system of applied creativity',
-    icon
+    icon: brain
   },
   {
     title: 'Lorem ipsum',
     text: 'For more than 5 years, we’ve been passionate about achieving better.',
-    icon
+    icon: seoIcon
   },
   {
     title: 'Lorem ipsum',
     text: 'Our system is a comprehensive system of applied creativity.',
-    icon
+    icon: secureIcon
   },
   {
     title: 'Lorem ipsum',
     text: 'Our system is a comprehensive system of applied creativity.',
-    icon
+    icon: skills
   },
   {
     title: 'Lorem ipsum',
